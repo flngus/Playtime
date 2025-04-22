@@ -24,6 +24,6 @@ class $modify(MyMenuLayer, MenuLayer) {
 	}
 
 	void onPlaytime(CCObject*) {
-		PlaytimeLayer::create("")->show();
+		PlaytimeLayer::create()->show();
 	}
 };

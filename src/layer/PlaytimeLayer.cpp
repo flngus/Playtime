@@ -10,14 +10,16 @@
 
 using namespace geode::prelude;
 
-bool PlaytimeLayer::setup(std::string const&) {
+bool PlaytimeLayer::setup() {
     this->setTitle("Playtime");
 
     auto winSize = CCDirector::sharedDirector()->getWinSize();
 
     auto bg = CCScale9Sprite::create("square02b_001.png");
     bg->setContentSize({280.f, 54.f});
-    bg->setColor(ccColor3B(0, 0, 0));
+    
+    bg->setColor(ccColor3B({0, 0, 0}));
+
     bg->setOpacity(75);
     m_mainLayer->addChildAtPosition(bg, Anchor::Top, {0, -93});
 
@@ -71,9 +73,9 @@ void PlaytimeLayer::onInfo(CCObject* sender) {
     FLAlertLayer::create("Playtime", "Displays your <cy>playtime</c> for the <cg>game</c>.\nYour <cy>playtime</c> is split up between <cg>total time</c>, <cl>in-game time</c> and <co>editor time</c>.", "OK")->show();
 }
 
-PlaytimeLayer* PlaytimeLayer::create(std::string const& text) {
+PlaytimeLayer* PlaytimeLayer::create() {
     auto ret = new PlaytimeLayer();
-    if (ret && ret->initAnchored(350.f, 169.f, text, "GJ_square01.png")) {
+    if (ret && ret->initAnchored(350.f, 169.f, "GJ_square01.png")) {
         ret->autorelease();
         return ret;
     }
