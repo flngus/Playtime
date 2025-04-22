@@ -52,7 +52,7 @@ std::string PlaytimeLayer::formattedTime(float time) {
     int sec = static_cast<int>(time);
     int ms = static_cast<int>((time - sec) * 100);
 
-    if(time >= 0) {
+    if(time <= 0) {
         ret = "Start <cg>playing</c> to count your <cy>playtime</c>!";
     }
     else {
