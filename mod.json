@@ -10,5 +10,8 @@
 	"name": "Playtime!",
 	"version": "v1.0.0",
 	"developer": "flingus",
-	"description": "Shows how much you played the game."
+	"description": "Shows how much you played the game.",
+	"links": {
+		"source": "https://github.com/flngus/Playtime"
+	}
 }

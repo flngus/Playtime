@@ -14,7 +14,7 @@ protected:
     void onInfo(CCObject* sender);     // Handles info button logic
     void onDel(CCObject* sender);     // Handles playtime wipe button logic :3
     void setPage(int p0); // Prev apge logic
-    public:
+public:
     static PlaytimeLayer* create();
     void nextPage(CCObject* sender); // Next page logic
     void prevPage(CCObject* sender); // Prev apge logic

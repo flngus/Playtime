@@ -6,8 +6,6 @@
 */
 
 #include "PlaytimeLayer.h"
-#include "Geode/binding/FLAlertLayer.hpp"
-#include "Geode/ui/Popup.hpp"
 #include <Geode/Geode.hpp>
 
 using namespace geode::prelude;
@@ -97,7 +95,7 @@ void PlaytimeLayer::onInfo(CCObject* sender) {
 }
 
 void PlaytimeLayer::onDel(CCObject* sender) {
-    std::string ret = fmt::format("Are you <cr>sure</c> you want to delete your <cy>playtime</c>?\nYour <cy>playtime</c> will get <co>lost</c>.\n<cl>Total In-Game Time: {}</c>s\n<co>Total Editor Time: {}</c>s", Mod::get()->getSavedValue<double>("total-playtime"), Mod::get()->getSavedValue<double>("in-game-playtime"), Mod::get()->getSavedValue<double>("editor-playtime"));
+    std::string ret = fmt::format("Are you <cr>sure</c> you want to delete your <cy>playtime</c>?\nYour <cy>playtime</c> will get <co>lost</c>.\n<cl>Total In-Game Time: {}</c>s\n<co>Total Editor Time: {}</c>s", Mod::get()->getSavedValue<double>("in-game-playtime"), Mod::get()->getSavedValue<double>("editor-playtime"));
     createQuickPopup("Playtime", ret, "Cancel", "Yes",
         [](auto, bool btn2) {
             if (btn2) {

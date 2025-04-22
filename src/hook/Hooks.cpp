@@ -4,7 +4,6 @@
 #include <Geode/modify/EndLevelLayer.hpp>
 #include "Geode/modify/EditorPauseLayer.hpp"
 #include "Geode/modify/LevelEditorLayer.hpp"
-#include "Geode/modify/CCKeyboardDispatcher.hpp"
 #include "../layer/PlaytimeLayer.h"
 
 #include "../util.h"
@@ -68,20 +67,4 @@ class $modify(EditorPauseLayerHook, EditorPauseLayer) {
         log::debug("onSaveAndPlay");
         EditorPauseLayer::onSaveAndPlay(sender);
     }
-};
-
-class $modify(CCKeyboardDispatcher) {
-	bool dispatchKeyboardMSG(cocos2d::enumKeyCodes key, bool down, bool isRepeat) {
-		auto scene = CCDirector::get()->getRunningScene();
-        PlaytimeLayer* layer = typeinfo_cast<PlaytimeLayer*>(scene->getChildByID("PlaytimeLayer"));
-
-		if (layer) {
-			if (key == enumKeyCodes::KEY_ArrowLeft && down)
-                layer->prevPage(this);
-            if (key == enumKeyCodes::KEY_ArrowRight && down)
-                layer->nextPage(this);
-		}
-
-		return CCKeyboardDispatcher::dispatchKeyboardMSG(key, down, isRepeat);
-	}
 };
