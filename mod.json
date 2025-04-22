@@ -1,0 +1,14 @@
+{
+	"geode": "4.3.1",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "flingus.playtime",
+	"name": "Playtime!",
+	"version": "v1.0.0",
+	"developer": "flingus",
+	"description": "Shows how much you played the game."
+}
